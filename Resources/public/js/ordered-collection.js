@@ -40,7 +40,7 @@ var registerEvents = function() {
      * Reset CKEditor cause it doesn't work when the editor is moving in the DOM 
      */
     var resetCkEditor = function(container) {
-        if (Object.keys(CKEDITOR.instances).length) {
+        if (typeof CKEDITOR !== 'undefined' && Object.keys(CKEDITOR.instances).length) {
             for (instance in CKEDITOR.instances) {
                 if (container.find('#' + instance).length > 0) {
                     var config = CKEDITOR.instances[instance].config;
